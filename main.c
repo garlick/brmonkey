@@ -1,5 +1,5 @@
 /*****************************************************************************\
- *  main.c - firmware for bathroom timer
+ *  main.c - firmware for Bathroom Monkey
  *****************************************************************************
  *  Copyright (C) 2010 Shaun Garlick and Jim Garlick
  *  
@@ -26,7 +26,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* Personalize the bathroom timer!
+/* Personalize your Bathroom Monkey
  */
 #define TOP_TEETH_MIN	1
 #define TOP_TEETH_SEC	0
