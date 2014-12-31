@@ -1,10 +1,15 @@
-﻿#summary Bathroom Monkey Hardware Design 1.0
+﻿### Bathroom Monkey
+
+Bathroom monkey is a personalized toothbrush and shower timer
+designed and built by Jim and Shaun Garlick.
+
+![](https://github.com/garlick/brmonkey/blob/master/doc/P1010733_small.PNG)
 
 The heart of bathroom monkey is the
-[http://ww1.microchip.com/downloads/en/devicedoc/30430c.pdf PIC 16F84].
+[PIC 16F84](http://ww1.microchip.com/downloads/en/devicedoc/30430c.pdf).
 OK, that's the part we had laying around.  It's actually obsolete now,
 but any of the 18-pin 16F series PIC parts should be fine, provided you
-review the __CONFIG setting in the source code, edit appropriately,
+review the `__CONFIG` setting in the source code, edit appropriately,
 and recompile.
 
 The PIC controls an LCD, buzzer, and has two switches as inputs.
@@ -12,12 +17,11 @@ We happened to have a 1.8432 MHz crystal oscillator on hand, but you
 could just as easily use a ceramic resonator or even the internal RC clock,
 again with a recompile.
 
-http://brmonkey.googlecode.com/svn/wiki/schematic.png
+![](https://github.com/garlick/brmonkey/blob/master/doc/schematic.png)
 
-== LCD ==
+#### LCD
 
-The LCD employed in this project uses a 
-[http://ouwehand.net/~peter/lcd/lcd.shtml Hitachi HD44780 compatible]
+The LCD employed in this project uses a Hitachi HD44780 compatible]
 controller chip.  It is configured in 4 byte data mode so only 7 PIC I/O
 pins are consumed by the LCD.
 
@@ -33,26 +37,26 @@ the PIC can source 80 mA (on PORT A).
 We didn't attempt to drive the LCD backlight as that would have required
 external switching since it requires 675 mA max.
 
-== Buzzer ==
+#### Buzzer
 
 We used a Radio Shack no. 273-0059, 3.0-20VDC piezo buzzer which resonates
 at 2700Hz +/-500Hz.  The black wire (GND) is connected to a parallel output
 line and the red wire (+) is connected directly to the +5VDC supply, so
 writing a 0 to the output line activates the buzzer.
 
-== Switches ==
+#### Switches
 
 Two normally open pushbuttons are connected to two inputs on the PIC.
 These have 2.2K pullups in our design, although one could omit them and
 use the internal pullups.  The inputs are grounded when the switches are
 closed.
 
-== Power Supply ==
+#### Power Supply
 
 A recycled +5VDC, 700mA Samsung wall wart (fron an old cell phone) is
 the power supply.
 
-== Chassis ==
+#### Chassis
 
 We purchased the 1/2 inch thick, 4 inch square clear acrylic sheets for the
 sides and a 1/8 inch wall, 2.5 inch diameter 5 inch long clear cast acrylic
